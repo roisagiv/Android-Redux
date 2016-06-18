@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/android-redux.iml" filepath="$PROJECT_DIR$/android-redux.iml" />
+      <module fileurl="file://$PROJECT_DIR$/redux/redux.iml" filepath="$PROJECT_DIR$/redux/redux.iml" />
+      <module fileurl="file://$PROJECT_DIR$/redux-sample/redux-sample.iml" filepath="$PROJECT_DIR$/redux-sample/redux-sample.iml" />
+    </modules>
+  </component>
+</project>

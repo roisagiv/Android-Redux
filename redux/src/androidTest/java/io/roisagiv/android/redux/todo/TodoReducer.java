@@ -25,8 +25,9 @@ public class TodoReducer implements Reducer<TodoState, TodoAction> {
         break;
       case EditTodo:
         break;
-      case CompleteTodo:
-        TodoAction.CompleteTodoAction completeTodoAction = (TodoAction.CompleteTodoAction) action;
+      case CompletingTodo:
+        TodoAction.CompletingTodoAction completeTodoAction =
+            (TodoAction.CompletingTodoAction) action;
         todo = findById(completeTodoAction.getId(), newState.getTodos());
         todo.setCompleting(true);
         break;

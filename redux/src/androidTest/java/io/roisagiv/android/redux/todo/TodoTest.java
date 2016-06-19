@@ -1,5 +1,6 @@
 package io.roisagiv.android.redux.todo;
 
+import android.os.SystemClock;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 
@@ -9,6 +10,7 @@ import io.roisagiv.android.redux.GetState;
 import io.roisagiv.android.redux.Middleware;
 import io.roisagiv.android.redux.Store;
 import io.roisagiv.android.redux.stores.DefaultStore;
+import io.roisagiv.android.redux.thunk.ThunkMiddleware;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -90,7 +92,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
     Store<TodoState, TodoAction> store =
         new DefaultStore<>(InstrumentationRegistry.getTargetContext().getMainLooper(),
-            new TodoReducer(), initialState);
+            new TodoReducer(), initialState, new ThunkMiddleware<TodoState, TodoAction>());
 
     TodoState newState;
 

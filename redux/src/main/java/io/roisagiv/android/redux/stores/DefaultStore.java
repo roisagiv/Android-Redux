@@ -4,7 +4,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import io.roisagiv.android.redux.Action;
-import io.roisagiv.android.redux.AsyncAction;
 import io.roisagiv.android.redux.Dispatcher;
 import io.roisagiv.android.redux.Middleware;
 import io.roisagiv.android.redux.Reducer;
@@ -38,10 +37,6 @@ public class DefaultStore<StateType extends State, ActionType extends Enum>
     Action<ActionType> action = (Action<ActionType>) msg.obj;
     setState(this.getReducer().handleAction(action, getState()));
 
-    if (action instanceof AsyncAction<?, ?>) {
-      AsyncAction<ActionType, StateType> asyncAction = (AsyncAction<ActionType, StateType>) action;
-      asyncAction.call(this, this);
-    }
     return true;
   }
 }

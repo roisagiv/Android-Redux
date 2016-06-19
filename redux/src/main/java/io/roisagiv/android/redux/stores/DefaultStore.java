@@ -17,6 +17,7 @@ public class DefaultStore<StateType extends State, ActionType extends Enum>
   private final Handler handler;
   private final Dispatcher<ActionType> dispatcher;
 
+  @SafeVarargs
   public DefaultStore(Looper looper, Reducer<StateType, ActionType> reducer, StateType defaultState,
       Middleware<StateType, ActionType>... middleware) {
     super(reducer, defaultState, middleware);

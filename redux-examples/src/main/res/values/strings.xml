@@ -1,0 +1,8 @@
+<resources>
+  <string name="app_name">Redux</string>
+  <string name="text_shoppingcart_header">Shopping Cart Example</string>
+  <string name="text_shoppingcart_products_header">Products</string>
+  <string name="text_shoppingcart_cart_header">Your cart</string>
+  <string name="text_shoppingcart_total">Total: $1041.99</string>
+  <string name="button_shoppingcart_checkout">Checkout</string>
+</resources>

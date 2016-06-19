@@ -1,0 +1,59 @@
+apply plugin: 'com.android.application'
+
+android {
+  compileSdkVersion 23
+  buildToolsVersion "23.0.3"
+
+  defaultConfig {
+    applicationId "io.roisagiv.android.redux.examples"
+    minSdkVersion 15
+    targetSdkVersion 23
+    versionCode 1
+    versionName "1.0"
+
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    buildConfigField "String", "SHOPPING_CART_BASE_URL",
+        '"http://www.mocky.io/v2/576847b20f00002d1d291f5d"'
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+ext {
+  androidTestVersion = "0.5"
+  espressoVersion = "2.2.2"
+}
+
+dependencies {
+  compile 'com.android.support:appcompat-v7:23.4.0'
+  compile 'com.loopj.android:android-async-http:1.4.9'
+  compile project(':redux')
+
+  androidTestCompile("com.android.support.test:runner:${androidTestVersion}") {
+    exclude group: "com.android.support"
+  }
+
+  androidTestCompile("com.android.support.test.espresso:espresso-core:${espressoVersion}") {
+    exclude module: "espresso-idling-resource"
+    exclude group: "com.android.support"
+  }
+
+  androidTestCompile("com.android.support.test.espresso:espresso-contrib:${espressoVersion}") {
+    exclude module: "espresso-core"
+    exclude module: "recyclerview-v7"
+    exclude group: "com.android.support"
+  }
+
+  androidTestCompile("com.android.support.test.espresso:espresso-intents:${espressoVersion}") {
+    exclude module: "espresso-core"
+    exclude module: "recyclerview-v7"
+    exclude group: "com.android.support"
+  }
+
+  androidTestCompile 'org.assertj:assertj-core:1.7.1'
+}

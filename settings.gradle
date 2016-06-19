@@ -1,1 +1,1 @@
-include ':redux', ':redux-sample'
+include ':redux', ':redux-examples'
